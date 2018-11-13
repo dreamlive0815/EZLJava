@@ -24,6 +24,13 @@ class T_CN extends T
     {
         //M.put("", "");
         M.put("DCV.V.MNM", "MAC不匹配");
+        M.put("DRAV.ATNAN.A", "用于签到的时间不能早于当前时间");
+        M.put("DRAV.CCL.LON", "课前签到的经度必须在%s-%s之间");
+        M.put("DRAV.CCL.LA", "课前签到的纬度必须在%s-%s之间");
+        M.put("DRAV.CSL.LON", "归寝签到的经度必须在%s-%s之间");
+        M.put("DRAV.CSL.LA", "归寝签到的纬度必须在%s-%s之间");
+        M.put("DRAV.CST.IL", "不合法的归寝签到时间:%s");
+        M.put("EJ.ALI.NLI", "请先登录");
         M.put("EJ.GMI.MNF", "找不到模块[%s]的id");
     }
 
@@ -42,7 +49,14 @@ class T_EN extends T
     public T_EN()
     {
         M.put("DCV.V.MNM", "MAC does not match");
-        M.put("EJ.GMI.MNF", "cannot find the id of  %s module");
+        M.put("DRAV.ATNAN.A", "you cannot report using the time ahead now");
+        M.put("DRAV.CCL.LON", "the longitude of course location must be bewteen %s-%s");
+        M.put("DRAV.CCL.LA", "the latitude of course location must be bewteen %s-%s");
+        M.put("DRAV.CSL.LON", "the longitude of sleep location must be bewteen %s-%s");
+        M.put("DRAV.CSL.LA", "the latitude of sleep location must be bewteen %s-%s");
+        M.put("DRAV.CST.IL", "illegal sleep time : %s");
+        M.put("EJ.ALI.NLI", "please log in first");
+        M.put("EJ.GMI.MNF", "cannot find the id of the module : %s");
     }
 
     @Override

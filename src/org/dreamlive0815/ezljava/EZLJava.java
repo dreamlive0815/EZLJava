@@ -20,7 +20,7 @@ public class EZLJava
     private final static String URI = "/WebReport/ReportServer";
 
     public CredentialsVerifier credentialVerifier = new DefaultCredentialsVerifier();
-    public ReportArgsVerifier reportArgsVerifier;
+    public ReportArgsVerifier reportArgsVerifier = new DefaultReportArgsVerifier();
 
     private SimpleClient client;
     private Map<String, String> moduleMap = new HashMap<String, String>();
@@ -28,6 +28,7 @@ public class EZLJava
     private String macAddr;
     private String devName;
     private String username;
+    private boolean loggedIn;
 
     public EZLJava(String macAddr, String devName) throws Exception
     {
@@ -41,6 +42,7 @@ public class EZLJava
 
         this.macAddr = macAddr;
         this.devName = devName;
+        loggedIn = false;
     }
 
     public void login(String username, String password) throws Exception
@@ -64,6 +66,7 @@ public class EZLJava
 
         String s = client.getString(URI, params);
         getJson(s);
+        loggedIn = true;
         getIndexPage();
     }
 
@@ -78,6 +81,11 @@ public class EZLJava
         JSONArray jsonA = (JSONArray)getJson(s);
         getModuleMap(jsonA, "");
         return jsonA;
+    }
+
+    private void assertLoggedIn() throws Exception
+    {
+        if(loggedIn) throw new Exception(T.G("EJ.ALI.NLI"));
     }
 
     private Map<String, Object> getBaseParams()
