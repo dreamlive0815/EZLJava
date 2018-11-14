@@ -91,7 +91,7 @@ public class EZLJava
         return jsonA;
     }
 
-    private JSONObject getSleepPage() throws Exception
+    public JSONObject getSleepPage() throws Exception
     {
         assertLoggedIn();
 

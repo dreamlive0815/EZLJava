@@ -11,7 +11,15 @@ public class DemoApplication {
 	public static void main(String[] args)
 	{
 		TI();
+
+		String path = DemoApplication.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+		System.out.println(path);
 		
+		//Report();
+	}
+
+	static void Report()
+	{
 		try{
 			EZLJava ezl = new EZLJava(mac, dev, true);
 			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();
