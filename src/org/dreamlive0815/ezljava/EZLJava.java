@@ -85,7 +85,7 @@ public class EZLJava
 
     public void sleepReport(SleepArgs args) throws Exception
     {
-        if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
+        //if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
         assertLoggedIn();
         String moduleId = getModuleId(".寝室建设.归寝签到");
 
@@ -99,7 +99,7 @@ public class EZLJava
 
     private void assertLoggedIn() throws Exception
     {
-        if(loggedIn) throw new Exception(T.G("EJ.ALI.NLI"));
+        if(!loggedIn) throw new Exception(T.G("EJ.ALI.NLI"));
     }
 
     private Map<String, Object> getBaseParams()

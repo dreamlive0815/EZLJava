@@ -2,14 +2,14 @@ package org.dreamlive0815.ezljava;
 
 public class DefaultReportArgsVerifier extends ReportArgsVerifier
 {
-    private static double SLEEP_MIN_LONGITUDE = 120.345;
-    private static double SLEEP_MAX_LONGITUDE = 120.368;
-    private static double SLEEP_MIN_LATITUDE = 30.308;
-    private static double SLEEP_MAX_LATITUDE = 30.330;
-    private static double COURSE_MIN_LONGITUDE = 120.331;
-    private static double COURSE_MAX_LONGITUDE = 120.3582;
-    private static double COURSE_MIN_LATITUDE = 30.309;
-    private static double COURSE_MAX_LATITUDE = 30.32;
+    public static double SLEEP_MIN_LONGITUDE = 120.345;
+    public static double SLEEP_MAX_LONGITUDE = 120.368;
+    public static double SLEEP_MIN_LATITUDE = 30.308;
+    public static double SLEEP_MAX_LATITUDE = 30.330;
+    public static double COURSE_MIN_LONGITUDE = 120.331;
+    public static double COURSE_MAX_LONGITUDE = 120.3582;
+    public static double COURSE_MIN_LATITUDE = 30.309;
+    public static double COURSE_MAX_LATITUDE = 30.32;
 
     public void Verify(ReportArgs args) throws Exception
     {
