@@ -34,6 +34,7 @@ class T_CN extends T
         M.put("DRAV.CST.IL", "不合法的归寝签到时间:%s");
         M.put("EJ.ALI.NLI", "请先登录");
         M.put("EJ.GMI.MNF", "找不到模块[%s]的id");
+        M.put("EJ.SR.WVF", "归寝签到校验失败:%s");
         M.put("RAG.GRD.OFB", "base必须在minLimit和maxLimit之间(%s-%s)");
     }
 
@@ -62,6 +63,7 @@ class T_EN extends T
         M.put("DRAV.CST.IL", "illegal sleep time : %s");
         M.put("EJ.ALI.NLI", "please log in first");
         M.put("EJ.GMI.MNF", "cannot find the id of the module : %s");
+        M.put("EJ.SR.WVF", "sleep report verify failed : %s");
         M.put("RAG.GRD.OFB", "base must be  between minLimit and maxLimit(%s-%s)");
     }
 

@@ -19,6 +19,7 @@ public class EZLJava
 {
     private final static String BA = "http://stu.zstu.edu.cn";
     private final static String URI = "/WebReport/ReportServer";
+    private static final String emptyXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><WorkBook><Version>6.5</Version><Report class=\"com.fr.report.WorkSheet\" name=\"0\"><CellElementList></CellElementList></Report></WorkBook>";
     private static final String xmlFormat = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><WorkBook><Version>6.5</Version><Report class=\"com.fr.report.WorkSheet\" name=\"0\"><CellElementList><C c=\"%s\" r=\"%s\"><O t=\"%s\"><![5b]CDATA[5b]%s[5d][5d]></O></C></CellElementList></Report></WorkBook>";
 
     public CredentialsVerifier credentialVerifier = new DefaultCredentialsVerifier();
@@ -94,6 +95,7 @@ public class EZLJava
     {
         assertLoggedIn();
 
+        //2136
         String moduleId = getModuleId(".寝室建设.归寝签到");
         Map<String, Object> params = getBaseParams();
         params.put("cmd", "entry_report");
@@ -117,10 +119,10 @@ public class EZLJava
 
     public void sleepReport(SleepArgs args) throws Exception
     {
-        //if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
+        if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
         
         try {
-            //getSleepPage();
+            getSleepPage();
 
             String lon = formatDouble(args.longitude);
             String la = formatDouble(args.latitude);
@@ -137,17 +139,73 @@ public class EZLJava
             xml = String.format(xmlFormat, 2, 2, 'S', lon);
             params.put("reportXML", xml);
             s = client.getString(UC(URI, params));
-            //System.out.println(xml);
             
             params.put("editcol", 2);
             params.put("editrow", 3);
-            xml =  String.format(xmlFormat, 2, 3, 'S', la);
+            xml = String.format(xmlFormat, 2, 3, 'S', la);
             params.put("reportXML", xml);
             s = client.getString(UC(URI, params));
-            //System.out.println(xml);
-            
+
+            params.put("editcol", 5);
+            params.put("editrow", 3);
+            xml = String.format(xmlFormat, 5, 3, 'S', "[6709][6548]");
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
+
+            params.put("editcol", 5);
+            params.put("editrow", 2);
+            xml = String.format(xmlFormat, 5, 2, 'S', "[6709][6548]");
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
 
 
+            sessionId = null;
+            params = getBaseParams();
+            params.put("op", "write");
+            params.put("reportlet", "2017/baodaocheck_enter.cpt");
+            params.put("time", args.time);
+            params.put("jingdu", args.longitude);
+            params.put("weidu", args.latitude);
+            s = client.getString(URI, params);
+            getJson(s);
+
+            params = getBaseParams();
+            params.put("cmd", "read_by_json");
+            params.put("op", "fr_write");
+            params.put("toVanCharts", "true");
+            params.put("path", "/view/report");
+            params.put("reportIndex", "0");
+            params.put("pn", "1");
+            s = client.getString(UC(URI, params));
+
+            params = getBaseParams();
+            params.put("op", "widget");
+            params.put("path", "");
+            params.put("location", "{\"row\":5,\"column\":2,\"reportIndex\":0}");
+            params.put("reload", "true");
+            params.put("startIndex", "0");
+            params.put("limitIndex", "0");
+            s = client.getString(UC(URI, params));
+
+            params = getBaseParams();
+            params.put("cmd", "write_verify");
+            params.put("op", "fr_write");
+            params.put("path", "/view/report");
+            params.put("cutPage", "");
+            params.put("reportXML", emptyXml);
+            s = client.getString(UC(URI, params));
+            JSONArray jsonA = (JSONArray)getJson(s);
+            JSONObject jsonO = jsonA.getJSONObject(0);
+            if(jsonO.containsKey("message")) {
+                throw new Exception(String.format(T.G("EJ.SR.WVF"), jsonO.getString("message")));
+            }
+
+            params = getBaseParams();
+            params.put("cmd", "submit_w_report");
+            params.put("op", "fr_write");
+            params.put("path", "/view/report");
+            params.put("reportXML", emptyXml);
+            s = client.getString(UC(URI, params));
 
         } catch(Exception e) {
             closeSession();
