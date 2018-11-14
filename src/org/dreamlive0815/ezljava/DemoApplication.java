@@ -11,13 +11,12 @@ public class DemoApplication {
 	public static void main(String[] args)
 	{
 		TI();
-	
 		
 		try{
 			EZLJava ezl = new EZLJava(mac, dev, true);
 			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();
 			as.time = "21:59:00";
-			ezl.login(userName, passWord);
+			//ezl.login(userName, passWord);
 			ezl.sleepReport(as);
 		} catch(Exception e) {
 			System.out.println("ERROR");

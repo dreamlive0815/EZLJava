@@ -17,7 +17,9 @@ import okhttp3.SimpleClient;
 
 public class EZLJava
 {
+    private final static String BA = "http://stu.zstu.edu.cn";
     private final static String URI = "/WebReport/ReportServer";
+    private static final String xmlFormat = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><WorkBook><Version>6.5</Version><Report class=\"com.fr.report.WorkSheet\" name=\"0\"><CellElementList><C c=\"%s\" r=\"%s\"><O t=\"%s\"><![5b]CDATA[5b]%s[5d][5d]></O></C></CellElementList></Report></WorkBook>";
 
     public CredentialsVerifier credentialVerifier = new DefaultCredentialsVerifier();
     public ReportArgsVerifier reportArgsVerifier = new DefaultReportArgsVerifier();
@@ -30,6 +32,11 @@ public class EZLJava
     private String username;
     private boolean loggedIn;
 
+    public static String formatDouble(double d)
+    {
+        return String.format("%.6f", d);
+    } 
+
     public EZLJava(String macAddr, String devName) throws Exception
     {
         this(macAddr, devName, false);
@@ -38,7 +45,7 @@ public class EZLJava
     public EZLJava(String macAddr, String devName, boolean debug) throws Exception
     {
         client = new SimpleClient(debug);
-        client.baseAddress = "http://stu.zstu.edu.cn";
+        client.baseAddress = BA;
 
         this.macAddr = macAddr;
         this.devName = devName;
@@ -83,18 +90,70 @@ public class EZLJava
         return jsonA;
     }
 
-    public void sleepReport(SleepArgs args) throws Exception
+    private JSONObject getSleepPage() throws Exception
     {
-        //if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
         assertLoggedIn();
-        String moduleId = getModuleId(".寝室建设.归寝签到");
 
+        String moduleId = getModuleId(".寝室建设.归寝签到");
         Map<String, Object> params = getBaseParams();
         params.put("cmd", "entry_report");
         params.put("op", "fs_main");
         params.put("id", moduleId);
         String s = client.getString(URI, params);
+        getJson(s);
 
+        params = getBaseParams();
+        params.put("cmd", "read_by_json");
+        params.put("op", "fr_write");
+        params.put("toVanCharts", "true");
+        params.put("path", "/view/report");
+        params.put("reportIndex", "0");
+        params.put("pn", "1");
+
+        s = client.getString(UC(URI, params));
+
+        return (JSONObject)getJson(s);
+    }
+
+    public void sleepReport(SleepArgs args) throws Exception
+    {
+        //if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
+        
+        try {
+            //getSleepPage();
+
+            String lon = formatDouble(args.longitude);
+            String la = formatDouble(args.latitude);
+            String xml; String s;
+            Map<String, Object> params = getBaseParams();
+            
+            params.put("cmd", "cal_write_cell");
+            params.put("op", "fr_write");
+            params.put("path", "/view/report");
+            params.put("editcol", 2);
+            params.put("editrow", 2);
+            params.put("editReportIndex", "0");
+            params.put("loadidxs", "[5b]0[5d]");
+            xml = String.format(xmlFormat, 2, 2, 'S', lon);
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
+            //System.out.println(xml);
+            
+            params.put("editcol", 2);
+            params.put("editrow", 3);
+            xml =  String.format(xmlFormat, 2, 3, 'S', la);
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
+            //System.out.println(xml);
+            
+
+
+
+        } catch(Exception e) {
+            closeSession();
+            throw e;
+        }
+        closeSession();
     }
 
     private void assertLoggedIn() throws Exception
@@ -102,12 +161,21 @@ public class EZLJava
         if(!loggedIn) throw new Exception(T.G("EJ.ALI.NLI"));
     }
 
+    private void closeSession() throws Exception
+    {
+        if(sessionId == null) return;
+        Map<String, Object> params = getBaseParams();
+        params.put("op", "closesessionid");
+        client.getString(UC(URI, params));
+        sessionId = null;
+    }
+
     private Map<String, Object> getBaseParams()
     {
         HashMap<String, Object> map = new HashMap<String, Object>();
         map.put("__device__", "android");
-        map.put("__mobileapp__", "yes");
-        map.put("isMobile", "yes");
+        //map.put("__mobileapp__", "yes");
+        //map.put("isMobile", "yes");
         if(sessionId != null) map.put("sessionID", sessionId);
         return map;
     }
@@ -135,7 +203,7 @@ public class EZLJava
 		return jsonObj;
     }
 
-    protected String getModuleId(String path) throws Exception
+    private String getModuleId(String path) throws Exception
     {
         if(!moduleMap.containsKey(path)) throw new Exception(String.format(T.G("EJ.GMI.MNF"), path));
         return moduleMap.get(path);
@@ -152,5 +220,10 @@ public class EZLJava
             JSONArray children = jsonO.getJSONArray("ChildNodes");
             if(children != null) getModuleMap(children, realPath);
         }
+    }
+
+    private String UC(String uri, Map<String, Object> params) throws Exception
+    {
+        return String.format("%s?%s", uri, SimpleClient.buildQueryString(params));
     }
 }
