@@ -83,6 +83,20 @@ public class EZLJava
         return jsonA;
     }
 
+    public void sleepReport(SleepArgs args) throws Exception
+    {
+        if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
+        assertLoggedIn();
+        String moduleId = getModuleId(".寝室建设.归寝签到");
+
+        Map<String, Object> params = getBaseParams();
+        params.put("cmd", "entry_report");
+        params.put("op", "fs_main");
+        params.put("id", moduleId);
+        String s = client.getString(URI, params);
+
+    }
+
     private void assertLoggedIn() throws Exception
     {
         if(loggedIn) throw new Exception(T.G("EJ.ALI.NLI"));

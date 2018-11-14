@@ -1,7 +1,5 @@
 package org.dreamlive0815.ezljava;
 
-import java.util.Calendar;
-
 public class DefaultReportArgsVerifier extends ReportArgsVerifier
 {
     private static double SLEEP_MIN_LONGITUDE = 120.345;
@@ -16,6 +14,14 @@ public class DefaultReportArgsVerifier extends ReportArgsVerifier
     public void Verify(ReportArgs args) throws Exception
     {
 
+        int type = args.getType();
+        if(type == ReportArgs.TYPE_COURSE) {
+            checkCourseLocation(args.longitude, args.latitude);
+            checkCourseTime(args.code, args.time);
+        } else if (type == ReportArgs.TYPE_SLEEP) {
+            checkSleepLocation(args.longitude, args.latitude);
+            checkSleepTime(args.time);
+        }
     }
 
     private void assertTimeNotAheadNow(ReportTime time) throws Exception
@@ -31,6 +37,27 @@ public class DefaultReportArgsVerifier extends ReportArgsVerifier
             throw new Exception(String.format(T.G("DRAV.CCL.LON"), COURSE_MIN_LONGITUDE, COURSE_MAX_LONGITUDE));
         if (latitude < COURSE_MIN_LATITUDE || latitude > COURSE_MAX_LATITUDE)
             throw new Exception(String.format(T.G("DRAV.CCL.LA"), COURSE_MIN_LATITUDE, COURSE_MAX_LATITUDE));
+    }
+
+    private void checkCourseTime(String coursePeriod, String time) throws Exception
+    {
+        ReportTime t = new ReportTime(time);
+        assertTimeNotAheadNow(t);
+        int a = t.all;
+        boolean f;
+        switch (coursePeriod)
+        {
+            case "A1": f = a >= 75500 && a <= 81000; break;
+            case "A2": f = a >= 94500 && a <= 100000; break;
+            case "A3": f = a >= 94500 && a <= 100000; break;
+            case "A4": f = a >= 131500 && a <= 133000; break;
+            case "A5": f = a >= 131500 && a <= 133000; break;
+            case "A6": f = a >= 150500 && a <= 151500; break;
+            case "A7": f = a >= 181500 && a <= 183000; break;
+            case "A8": f = a >= 181500 && a <= 183000; break;
+            default: throw new Exception(String.format(T.G("DRAV.CCT.UKP"), coursePeriod));
+        }
+        if(!f) throw new Exception(String.format(T.G("DRAV.CCT.IL"), time, coursePeriod));
     }
 
     private void checkSleepLocation(double longitude, double latitude) throws Exception

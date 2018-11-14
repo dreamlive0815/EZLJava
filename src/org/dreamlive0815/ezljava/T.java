@@ -27,6 +27,8 @@ class T_CN extends T
         M.put("DRAV.ATNAN.A", "用于签到的时间不能早于当前时间");
         M.put("DRAV.CCL.LON", "课前签到的经度必须在%s-%s之间");
         M.put("DRAV.CCL.LA", "课前签到的纬度必须在%s-%s之间");
+        M.put("DRAV.CCT.IL", "不合法的课前签到时间:%s对于时间段:%s");
+        M.put("DRAV.CCT.UKP", "不合法的时间段:%s");
         M.put("DRAV.CSL.LON", "归寝签到的经度必须在%s-%s之间");
         M.put("DRAV.CSL.LA", "归寝签到的纬度必须在%s-%s之间");
         M.put("DRAV.CST.IL", "不合法的归寝签到时间:%s");
@@ -52,6 +54,8 @@ class T_EN extends T
         M.put("DRAV.ATNAN.A", "you cannot report using the time ahead now");
         M.put("DRAV.CCL.LON", "the longitude of course location must be bewteen %s-%s");
         M.put("DRAV.CCL.LA", "the latitude of course location must be bewteen %s-%s");
+        M.put("DRAV.CCT.IL", "illegal time : %s for course period : %s");
+        M.put("DRAV.CCT.UKP", "illegal course period : %s");
         M.put("DRAV.CSL.LON", "the longitude of sleep location must be bewteen %s-%s");
         M.put("DRAV.CSL.LA", "the latitude of sleep location must be bewteen %s-%s");
         M.put("DRAV.CST.IL", "illegal sleep time : %s");
