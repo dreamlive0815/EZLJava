@@ -1,0 +1,266 @@
+POST http://stu.zstu.edu.cn/WebReport/ReportServer HTTP/1.1
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 55
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+__device__=android&op=fs_main&cmd=entry_report&id=2123&
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Pragma: No-cache
+Cache-Control: no-cache, no-store
+Expires: Wed, 31 Dec 1969 23:59:59 GMT
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:29 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 369
+
+{"hash5":true,"appearRefresh":false,"isMobileCanvasSize":false,"fitConfig":{"isUseHTML":false,"hash5":true,"verFit":1,"horFit":1},"toolbarConfig":{"refresh":true,"zoom":false},"refresh":true,"zoom":false,"sessionid":"37201","verFit":1,"horFit":1,"isUseHTML":false,"reportAttr":{"listeners":[]},"allowFullScreen":false,"delay":true,"schShowType":"1","isShowWindow":true}
+
+------------------------------------------------------------------
+
+GET http://stu.zstu.edu.cn/WebReport/ReportServer?__device__=android&toVanCharts=true&op=page_content&cmd=json&sessionID=37201&pn=1&path=& HTTP/1.1
+content-type: application/x-www-form-urlencoded
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:29 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 13475
+
+{"isPoly":false,"charts":[],"polyShowInOne":true,"reportTotalPage":1,"pageContent":{"background":{"color":"rgb(255,255,255)","backgroundType":"ColorBackground"},"detail":[{"floats":[],"x":0,"width":602,"y":0,"cellData":{"rows":[{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"bold":true}},"row":0,"text":"时间段"},{"rowSpan":1,"col":1,"colSpan":3,"style":{"background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"bold":true}},"row":0,"text":"上课时间段"}],"row":0},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":1,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":1,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":1,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":1,"text":""}],"row":1},{"cells":[{"rowSpan":5,"col":0,"colSpan":1,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1},"l":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss blw1 blss btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"bold":true}},"row":2,"text":"上午"},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA1.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A1.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":2,"text":"1-2节"}],"row":2},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""}],"row":3},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":4,"text":""},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA2.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A2.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":4,"text":"3-4节"}],"row":4},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""}],"row":5},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":6,"text":""},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA3.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A3.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":6,"text":"3-5节"}],"row":6},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""}],"row":7},{"cells":[{"rowSpan":5,"col":0,"colSpan":1,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1},"l":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss blw1 blss btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"bold":true}},"row":8,"text":"下午"},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA4.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A4.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":8,"text":"6-7节"}],"row":8},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":9,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":9,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":9,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":9,"text":""}],"row":9},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":10,"text":""},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA5.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A5.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":10,"text":"6-8节"}],"row":10},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""}],"row":11},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA6.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A6.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":12,"text":"8-9节"}],"row":12},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":13,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":13,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":13,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":13,"text":""}],"row":13},{"cells":[{"rowSpan":3,"col":0,"colSpan":1,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1},"l":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss blw1 blss btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"bold":true}},"row":14,"text":"晚上"},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA7.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A7.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":14,"text":"10-11节"}],"row":14},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":15,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":15,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":15,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":15,"text":""}],"row":15},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":16,"text":""},{"rowSpan":1,"col":1,"hyperlink":[{"__pi__":true,"data":"var as=arguments; return FR.tc(function(){FR.doHyperlinkByGet4Reportlet({\"para\":{\"__pi__\":true},\"feature\":\"width=600,height=400,\",\"url\":\"/WebReport/ReportServer?reportlet=%2Fxuefeng%2Ftiaoshi%2FA8.cpt%26op%3Dwrite\",\"target\":\"_blank\"})}, this, as)","reportlet":"/xuefeng/tiaoshi/A8.cpt&op=write","name":"课前签到","type":"report","parameters":{"__pi__":true},"target":"_blank"}],"colSpan":3,"style":{"border":{"b":{"c":"rgb(255,255,255)","s":"t","w":1},"r":{"c":"rgb(255,255,255)","s":"t","w":1},"t":{"c":"rgb(255,255,255)","s":"t","w":1}},"borderCss":"brw1 brss bbw1 bbss bl0 btw1 btss","background":{"color":"rgb(51,153,102)","backgroundType":"ColorBackground"},"ha":0,"contentCss":"fh tac bw fwb f18-0 tdu pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":24,"ul":1,"bold":true}},"row":16,"text":"10-12节"}],"row":16},{"cells":[{"rowSpan":1,"col":0,"colSpan":4,"style":{"ha":0,"contentCss":"fh tac bw f12-0 pl2","font":{"fontName":"SimSun","color":"rgb(0,0,0)","size":16}},"row":17,"text":""}],"row":17}]},"pageLayoutInfo":{"colWidth":[192,266,72,72],"colCount":4,"rowCount":18,"rowHeight":[45,19,45,19,46,19,45,19,45,19,46,19,45,19,45,19,46,47]},"height":607}]},"sessionID":"37201","currentPageIndex":1}
+
+------------------------------------------------------------------
+
+POST http://stu.zstu.edu.cn/WebReport/ReportServer HTTP/1.1
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 80
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+__device__=android&reportlet=%2Fxuefeng%2Ftiaoshi%2FA3.cpt&op=write&__pi__=true&
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:33 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 1452
+
+{"hash5":true,"appearRefresh":false,"isMobileCanvasSize":false,"fitConfig":{"isUseHTML":false,"hash5":true,"verFit":1,"horFit":1},"toolbarConfig":{"refresh":false,"zoom":true},"refresh":false,"zoom":true,"sessionid":"17319","verFit":1,"horFit":1,"isUseHTML":false,"reportAttr":{"listeners":[{"once":false,"eventName":"afterload","action":"function(e){\nvar as=arguments; return FR.tc(function(){;return eval(\"(function(){try{FR.location(function(status, message){ \\nif(status==\\\"success\\\") {\\n\\n    var jingwei=message.split(\\\",\\\") ; \\n    contentPane.setCellValue(2, 1, jingwei[1]); \\n    contentPane.setCellValue(2, 2, jingwei[0]); \\n\\n    if(jingwei[0] <= 30.32 && jingwei[0]>= 30.309)\\n    { contentPane.setCellValue(5, 2, \\\"有效\\\"); }else\\n    { contentPane.setCellValue(5, 2, \\\"无效\\\"); }\\n    \\n    if(jingwei[1] <= 120.3582 && jingwei[1]>= 120.331)\\n    { contentPane.setCellValue(5, 1, \\\"有效\\\"); }else\\n    { contentPane.setCellValue(5, 1, \\\"无效\\\"); }\\n\\n} else {  \\n    //定位失败，message返回对应的错误信息  \\n    FR.Msg.alert(message); //定位失败  \\n}  \\n});\\n}catch(ex){FR.Logger.error(ex);FR.Msg.toast(FR.i18nText('Custom')+'JS'+FR.i18nText('Error')+' : '+ex.message);}}).createDelegate(this, [], 0).apply(this, arguments)\");}, this, as)\n}"}],"hasSubmitButton":false,"unloadCheck":false},"allowFullScreen":false,"delay":true,"schShowType":"1","isShowWindow":true}
+
+------------------------------------------------------------------
+
+GET http://stu.zstu.edu.cn/WebReport/ReportServer?__device__=android&op=fr_write&cmd=read_by_json&toVanCharts=true&path=%2Fview%2Freport&sessionID=17319&reportIndex=0&pn=1& HTTP/1.1
+content-type: application/x-www-form-urlencoded
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:33 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 15033
+
+{"charts":[],"background":{"color":"rgb(255,255,255)","backgroundType":"ColorBackground"},"sessionID":"17319","content":{"colWidth":[11,98,49,49,50,49,98,11,0,72,72],"colCount":9,"rowCount":13,"cellData":{"rows":[{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":0,"text":""},{"rowSpan":1,"col":1,"realValue":"2018-11-15","colSpan":1,"formula":"format(today(), \"yyyy-MM-dd\")","style":{"pr":12,"ha":2,"pl":12,"contentCss":"fh bw f10-0","font":{"fontName":"微软雅黑","color":"rgb(57,121,78)","size":13.333333333333334}},"row":0,"text":"2018-11-15"},{"rowSpan":1,"col":2,"realValue":4,"isnumber":true,"colSpan":2,"formula":"weekday(today())","style":{"pr":12,"ha":2,"pl":12,"contentCss":"fh bw f12-0","font":{"fontName":"微软雅黑","color":"rgb(57,121,78)","size":16}},"row":0,"text":"星期四","present":true},{"rowSpan":1,"col":4,"realValue":"当前时间：","colSpan":2,"style":{"pr":12,"ha":2,"pl":12,"contentCss":"fh bw f10-0","font":{"fontName":"微软雅黑","color":"rgb(57,121,78)","size":13.333333333333334}},"row":0,"text":"当前时间："},{"rowSpan":1,"col":6,"realValue":"23:00:34","colSpan":1,"formula":"format(now(), \"HH:mm:ss\")","style":{"pr":12,"ha":2,"pl":12,"contentCss":"fh bw f12-0","font":{"fontName":"微软雅黑","color":"rgb(57,121,78)","size":16}},"row":0,"text":"23:00:34"},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":0,"text":""},{"rowSpan":1,"col":8,"realValue":"1","colSpan":1,"formula":"if(HOUR(now()) >= 12, \"1\", \"0\")","style":{"background":{"color":"rgb(79,148,224)","backgroundType":"ColorBackground"},"contentCss":"fh bw pl2"},"row":0,"text":"1"}],"row":0},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":1,"text":""},{"rowSpan":1,"col":1,"realValue":"经度：","colSpan":1,"style":{"ha":0,"contentCss":"fh tac bw fwb f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668,"bold":true}},"row":1,"text":"经度："},{"rowSpan":1,"col":2,"colSpan":3,"style":{"ha":0,"contentCss":"fh tac bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668}},"row":1,"text":""},{"rowSpan":1,"col":5,"colSpan":2,"style":{"ha":0,"contentCss":"fh tac bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668}},"row":1,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":1,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":1,"text":""}],"row":1},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"ha":0,"contentCss":"fh tac bw fwb f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668,"bold":true}},"row":2,"text":""},{"rowSpan":1,"col":1,"realValue":"纬度：","colSpan":1,"style":{"ha":0,"contentCss":"fh tac bw fwb f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668,"bold":true}},"row":2,"text":"纬度："},{"rowSpan":1,"col":2,"colSpan":3,"style":{"ha":0,"contentCss":"fh tac bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668}},"row":2,"text":""},{"rowSpan":1,"col":5,"colSpan":2,"style":{"ha":0,"contentCss":"fh tac bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668}},"row":2,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"ha":0,"contentCss":"fh tac bw fwb f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":18.666666666666668,"bold":true}},"row":2,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":2,"text":""}],"row":2},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,0)","size":18.666666666666668}},"row":3,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,0)","size":18.666666666666668}},"row":3,"text":""},{"rowSpan":1,"col":3,"hyperlink":[{"name":"JavaScript1","type":"javascript","script":"\"(function(){try{location.reload();\\n}catch(ex){FR.Logger.error(ex);FR.Msg.toast(FR.i18nText('Custom')+'JS'+FR.i18nText('Error')+' : '+ex.message);}}).createDelegate(this, [], 0).apply(this, arguments)\""}],"colSpan":1,"style":{"ha":0,"contentCss":"fh tac bw fwb f14-0 tdu pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,255)","size":18.666666666666668,"ul":1,"bold":true}},"row":3,"text":"","showAsHtml":true},{"rowSpan":1,"col":4,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""},{"rowSpan":1,"col":5,"hyperlink":[{"name":"JavaScript1","type":"javascript","script":"\"(function(){try{location.reload();\\n}catch(ex){FR.Logger.error(ex);FR.Msg.toast(FR.i18nText('Custom')+'JS'+FR.i18nText('Error')+' : '+ex.message);}}).createDelegate(this, [], 0).apply(this, arguments)\""}],"realValue":"点此可刷新地理位置","colSpan":2,"style":{"ha":0,"contentCss":"fh tac bw fwb f12-0 tdu pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,255)","size":16,"ul":1,"bold":true}},"row":3,"text":"点此可刷新地理位置"},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":3,"text":""}],"row":3},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":4,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":4,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,0)","size":18.666666666666668}},"row":4,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":4,"text":""},{"rowSpan":1,"col":4,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":4,"text":""},{"rowSpan":1,"col":5,"colSpan":1,"style":{"contentCss":"fh bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,0)","size":18.666666666666668}},"row":4,"text":""},{"rowSpan":1,"col":6,"colSpan":1,"style":{"contentCss":"fh bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,0)","size":18.666666666666668}},"row":4,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":4,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":4,"text":""}],"row":4},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw f14-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,0)","size":18.666666666666668}},"row":5,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""},{"rowSpan":1,"col":3,"hyperlink":[{"name":"JavaScript脚本1","type":"javascript","script":"\"(function(){try{var timetype = contentPane.getCellValue(8,0); \\nvar time = contentPane.getCellValue(6,0); \\nvar jingdu = contentPane.getCellValue(2,1); \\nvar weidu = contentPane.getCellValue(2,2); \\nvar jingdux = contentPane.getCellValue(5,1);\\nvar weidux = contentPane.getCellValue(5,2);\\nif(jingdux==\\\"有效\\\" && weidux==\\\"有效\\\"){\\nFR.doHyperlinkByPost('/WebReport/ReportServer?reportlet=xuefeng/tiaoshi/A3check_enter.cpt&op=write&__replaceview__=true',{timetype:timetype,time:time, jingdu:jingdu,weidu:weidu,title:'考勤签到'});}\\nelse{\\nFR.Msg.alert(\\\"友情提示\\\",\\\"不在范围内，无法签到！\\\");\\n\\t}\\n}catch(ex){FR.Logger.error(ex);FR.Msg.toast(FR.i18nText('Custom')+'JS'+FR.i18nText('Error')+' : '+ex.message);}}).createDelegate(this, [], 0).apply(this, arguments)\""}],"realValue":"签","colSpan":2,"style":{"il":4,"ha":0,"contentCss":"fh tac bw fwb tdu pl2","font":{"fontName":"SimSun","color":"rgb(0,0,255)","size":80,"ul":1,"bold":true}},"row":5,"text":"签"},{"rowSpan":1,"col":5,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""},{"rowSpan":1,"col":6,"realValue":"若经纬度无效，请切换WiFi 4G并多次刷新","colSpan":1,"style":{"contentCss":"fh bw f12-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(255,0,0)","size":16}},"row":5,"text":"若经纬度无效，请切换WiFi 4G并多次刷新"},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":5,"text":""}],"row":5},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":6,"text":""},{"rowSpan":1,"col":1,"colSpan":6,"style":{"ha":0,"contentCss":"fh tac bw fwb f10-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(0,0,255)","size":13.333333333333334,"bold":true}},"row":6,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":6,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":6,"text":""}],"row":6},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""},{"rowSpan":1,"col":1,"realValue":"2015331250027,您好！","colSpan":4,"formula":"$fr_username + \",您好！\"","style":{"ha":2,"contentCss":"fh bw f12-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":16}},"row":7,"text":"2015331250027,您好！"},{"rowSpan":1,"col":5,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""},{"rowSpan":1,"col":6,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":7,"text":""}],"row":7},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":8,"text":""},{"rowSpan":1,"col":1,"realValue":"今日签到：","colSpan":1,"style":{"contentCss":"fh bw pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":12}},"row":8,"text":"今日签到："},{"rowSpan":1,"col":2,"realValue":"0次","colSpan":2,"formula":"CONCATENATE(count(C10), \"次\")","style":{"contentCss":"fh bw pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":12}},"row":8,"text":"0次"},{"rowSpan":1,"col":4,"colSpan":1,"style":{"contentCss":"fh bw pl2","font":{"fontName":"SimSun","color":"rgb(255,255,255)","size":12}},"row":8,"text":""},{"rowSpan":1,"col":5,"realValue":"当日考勤记录","colSpan":2,"style":{"contentCss":"fh bw pl2"},"row":8,"text":"当日考勤记录"},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":8,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":8,"text":""}],"row":8},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":9,"text":""},{"rowSpan":1,"col":1,"realValue":"签到详情","colSpan":1,"style":{"ha":2,"contentCss":"fh bw fwb f12-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":16,"bold":true}},"row":9,"text":"签到详情"},{"rowSpan":1,"col":2,"realValue":"","colSpan":2,"style":{"ha":0,"contentCss":"fh tac bw f12-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":16}},"row":9,"text":""},{"rowSpan":1,"col":4,"realValue":"","colSpan":2,"style":{"ha":0,"contentCss":"fh tac nw f12-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":16},"ts":2},"row":9,"text":""},{"rowSpan":1,"col":6,"realValue":"","colSpan":1,"style":{"ha":0,"contentCss":"fh tac bw f12-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":16}},"row":9,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"ha":0,"contentCss":"fh tac bw f12-0 pl2","font":{"fontName":"微软雅黑","color":"rgb(56,97,128)","size":16}},"row":9,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":9,"text":""}],"row":9},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":10,"text":""},{"rowSpan":3,"col":1,"realValue":"<span style=\"font-size:13px;font-family:宋体;\">个别同学反馈地理位置刷新无效或者不显示，现将具体问题解决方法告知如下：<br>1、是否开始GPS定位,2、检查是否允许APP使用地理位置，并且给予所有权限,(个别同学修改了允许修改手机设置就可以了)3、在GPS设置那里，切换一下GPS的模式或者方法，一般有三个模式。4、若还不行，卸载重装，提示时给予所有权限。<\/span>","colSpan":6,"style":{"contentCss":"fh bw pl2"},"row":10,"text":"<span style=\"font-size:13px;font-family:宋体;\">个别同学反馈地理位置刷新无效或者不显示，现将具体问题解决方法告知如下：<br>1、是否开始GPS定位,2、检查是否允许APP使用地理位置，并且给予所有权限,(个别同学修改了允许修改手机设置就可以了)3、在GPS设置那里，切换一下GPS的模式或者方法，一般有三个模式。4、若还不行，卸载重装，提示时给予所有权限。<\/span>","showAsHtml":true},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":10,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":10,"text":""}],"row":10},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":4,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":5,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":6,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":11,"text":""}],"row":11},{"cells":[{"rowSpan":1,"col":0,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":1,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":2,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":3,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":4,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":5,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":6,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":7,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""},{"rowSpan":1,"col":8,"colSpan":1,"style":{"contentCss":"fh bw pl2"},"row":12,"text":""}],"row":12}]},"rowHeight":[37,38,38,44,27,104,28,38,37,31,47,47,69,19]},"needcaches":[],"isCutPage":false,"sheetTotalPage":1}
+
+------------------------------------------------------------------
+
+GET http://stu.zstu.edu.cn/WebReport/ReportServer?__device__=android&op=fr_write&cmd=cal_write_cell&path=%2Fview%2Freport&editcol=2&editrow=1&editReportIndex=0&sessionID=17319&reportXML=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20%3F%3E%3CWorkBook%3E%3CVersion%3E6.5%3C%2FVersion%3E%3CReport%20class%3D%22com.fr.report.WorkSheet%22%20name%3D%220%22%3E%3CCellElementList%3E%3CC%20c%3D%222%22%20r%3D%221%22%3E%3CO%20t%3D%22S%22%3E%3C!%5B5b%5DCDATA%5B5b%5D120.360061%5B5d%5D%5B5d%5D%3E%3C%2FO%3E%3C%2FC%3E%3C%2FCellElementList%3E%3C%2FReport%3E%3C%2FWorkBook%3E&loadidxs=%5B5b%5D0%5B5d%5D& HTTP/1.1
+content-type: application/x-www-form-urlencoded
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:34 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 27
+
+{"array":[],"success":true}
+
+------------------------------------------------------------------
+
+GET http://stu.zstu.edu.cn/WebReport/ReportServer?__device__=android&op=fr_write&cmd=cal_write_cell&path=%2Fview%2Freport&editcol=2&editrow=2&editReportIndex=0&sessionID=17319&reportXML=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20%3F%3E%3CWorkBook%3E%3CVersion%3E6.5%3C%2FVersion%3E%3CReport%20class%3D%22com.fr.report.WorkSheet%22%20name%3D%220%22%3E%3CCellElementList%3E%3CC%20c%3D%222%22%20r%3D%222%22%3E%3CO%20t%3D%22S%22%3E%3C!%5B5b%5DCDATA%5B5b%5D30.316111%5B5d%5D%5B5d%5D%3E%3C%2FO%3E%3C%2FC%3E%3C%2FCellElementList%3E%3C%2FReport%3E%3C%2FWorkBook%3E&loadidxs=%5B5b%5D0%5B5d%5D& HTTP/1.1
+content-type: application/x-www-form-urlencoded
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:34 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 27
+
+{"array":[],"success":true}
+
+------------------------------------------------------------------
+
+GET http://stu.zstu.edu.cn/WebReport/ReportServer?__device__=android&op=fr_write&cmd=cal_write_cell&path=%2Fview%2Freport&editcol=5&editrow=2&editReportIndex=0&sessionID=17319&reportXML=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20%3F%3E%3CWorkBook%3E%3CVersion%3E6.5%3C%2FVersion%3E%3CReport%20class%3D%22com.fr.report.WorkSheet%22%20name%3D%220%22%3E%3CCellElementList%3E%3CC%20c%3D%225%22%20r%3D%222%22%3E%3CO%20t%3D%22S%22%3E%3C!%5B5b%5DCDATA%5B5b%5D%5B6709%5D%5B6548%5D%5B5d%5D%5B5d%5D%3E%3C%2FO%3E%3C%2FC%3E%3C%2FCellElementList%3E%3C%2FReport%3E%3C%2FWorkBook%3E&loadidxs=%5B5b%5D0%5B5d%5D& HTTP/1.1
+content-type: application/x-www-form-urlencoded
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:34 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 27
+
+{"array":[],"success":true}
+
+------------------------------------------------------------------
+
+GET http://stu.zstu.edu.cn/WebReport/ReportServer?__device__=android&op=fr_write&cmd=cal_write_cell&path=%2Fview%2Freport&editcol=5&editrow=1&editReportIndex=0&sessionID=17319&reportXML=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20%3F%3E%3CWorkBook%3E%3CVersion%3E6.5%3C%2FVersion%3E%3CReport%20class%3D%22com.fr.report.WorkSheet%22%20name%3D%220%22%3E%3CCellElementList%3E%3CC%20c%3D%225%22%20r%3D%221%22%3E%3CO%20t%3D%22S%22%3E%3C!%5B5b%5DCDATA%5B5b%5D%5B65e0%5D%5B6548%5D%5B5d%5D%5B5d%5D%3E%3C%2FO%3E%3C%2FC%3E%3C%2FCellElementList%3E%3C%2FReport%3E%3C%2FWorkBook%3E&loadidxs=%5B5b%5D0%5B5d%5D& HTTP/1.1
+content-type: application/x-www-form-urlencoded
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:34 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 27
+
+{"array":[],"success":true}
+
+------------------------------------------------------------------
+
+POST http://stu.zstu.edu.cn/WebReport/ReportServer HTTP/1.1
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 59
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+__device__=android&op=fs_mobile_main&cmd=check_singlelogin&
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Type: text/html;charset=UTF-8
+Date: Thu, 15 Nov 2018 15:00:51 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+Content-Length: 15
+
+{"result":true}
+
+------------------------------------------------------------------
+
+POST http://stu.zstu.edu.cn/WebReport/ReportServer HTTP/1.1
+clienttype: 
+terminal: {"type":"mobile","os":"APP"}
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+Host: stu.zstu.edu.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+Cookie: JSESSIONID=4AB5D7E271B06A1546619AF2B55FF6BF; fr_remember=false; fr_password=; fr_username=2015331250027; cluster_share=77513
+User-Agent: okhttp/3.4.1
+
+__device__=android&op=fs_load&
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP=CAO PSA OUR
+Content-Length: 0
+Date: Thu, 15 Nov 2018 15:00:51 GMT
+X-Cache: MISS from dxrproxy189.zstu.edu.cn
+X-Cache-Lookup: MISS from dxrproxy189.zstu.edu.cn:80
+Via: 1.1 dxrproxy189.zstu.edu.cn (squid)
+Connection: keep-alive
+
+
+
+------------------------------------------------------------------
+

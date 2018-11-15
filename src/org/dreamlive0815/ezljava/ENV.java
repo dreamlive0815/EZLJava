@@ -38,6 +38,8 @@ public abstract class ENV
             String key = pair[0];
             if("".equals(key)) continue;
             String value = pair.length > 1 ? pair[1] : "";
+            key = key.trim();
+            value = value.trim();
             config.put(key, value);
         }
         return config;

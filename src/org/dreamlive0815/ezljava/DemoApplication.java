@@ -18,17 +18,18 @@ public class DemoApplication {
 		} catch(Exception e) {
 			
 		}
-		
-		Report();
+		MailUtil.sendMail("");
+		//Report(args);
 	}
 
-	static void Report()
+	static void Report(String[] args)
 	{
-		try{
+		try {
 			EZLJava ezl = new EZLJava(mac, dev, true);
 			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();
 			ezl.login(userName, passWord);
 			ezl.sleepReport(as);
+			LOG.L("归寝签到成功");
 		} catch(Exception e) {
 			LOG.L(String.format("!!!Error Occurs!!!%s%s", ENV.NL, e.getMessage()));
 		}
