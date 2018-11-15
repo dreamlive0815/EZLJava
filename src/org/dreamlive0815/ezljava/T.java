@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public abstract class T
 {
-    public static T instance = new T_EN();
+    public static T instance = new T_CN();
 
     public static String G(String key)
     {

@@ -8,12 +8,15 @@ import java.util.Random;
 
 public class ReportArgsGenerator
 {
-
-    public static double SLEEP_LONGITUDE = (double)ENV.G("RAG.SLO");
-    public static double SLEEP_LATITUDE = (double)ENV.G("RAG.SLA");
-    public static double COURSE_LONGITUDE = (double)ENV.G("RAG.CLO");
-    public static double COURSE_LATITUDE = (double)ENV.G("RAG.CLA");
+    public static double SLEEP_LONGITUDE = (double)ENV.G("sleep.longitude");
+    public static double SLEEP_LATITUDE = (double)ENV.G("sleep.latitude");
+    public static double COURSE_LONGITUDE = (double)ENV.G("course.longitude");
+    public static double COURSE_LATITUDE = (double)ENV.G("course.latitude");
     public static double OFFSET = 0.001;
+
+    static {
+
+    }
 
     private static final String reportTimeFormat = "HH:mm:ss";
 

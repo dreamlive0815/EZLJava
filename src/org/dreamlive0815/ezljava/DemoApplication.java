@@ -1,5 +1,7 @@
 package org.dreamlive0815.ezljava;
 
+import java.util.List;
+import org.dreamlive0815.util.*;
 
 public class DemoApplication {
 
@@ -11,11 +13,14 @@ public class DemoApplication {
 	public static void main(String[] args)
 	{
 		TI();
-
-		String path = DemoApplication.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-		System.out.println(path);
+		try {
+			
+		} catch(Exception e) {
+			System.out.println("ERROR");
+			System.out.println(e.getMessage());
+		}
 		
-		//Report();
+		Report();
 	}
 
 	static void Report()
@@ -29,14 +34,13 @@ public class DemoApplication {
 			System.out.println("ERROR");
 			System.out.println(e.getMessage());
 		}
-		
 	}
 	 
 	static void TI()
 	{
-		userName = "2015331250027";
-        passWord = "252614";
-        mac = "140AD8A4B7CCC4B4DWH9X17115W08684";
-        dev = "HUAWEI DIG-AL00";
+		userName = String.valueOf(ENV.G("username"));
+        passWord = String.valueOf(ENV.G("password"));
+        mac = String.valueOf(ENV.G("macaddress"));
+        dev = String.valueOf(ENV.G("devname"));
 	}
 }
