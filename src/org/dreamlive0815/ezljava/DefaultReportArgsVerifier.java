@@ -13,6 +13,7 @@ public class DefaultReportArgsVerifier extends ReportArgsVerifier
 
     public void Verify(ReportArgs args) throws Exception
     {
+        log(args);
 
         int type = args.getType();
         if(type == ReportArgs.TYPE_COURSE) {
@@ -75,5 +76,17 @@ public class DefaultReportArgsVerifier extends ReportArgsVerifier
         if(t.all < 213000 || t.all > 235959) throw new Exception(String.format(T.G("DRAV.CST.IL"), time));
     }
 
-
+    private void log(ReportArgs args)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("ReportArgs:"); sb.append(ENV.NL);
+        sb.append("type="); sb.append(args.type == ReportArgs.TYPE_SLEEP ? "SLEEP" : args.type == ReportArgs.TYPE_COURSE ? "COURSE" : ""); sb.append(ENV.NL);
+        if(args.type == ReportArgs.TYPE_COURSE) {
+            sb.append("code="); sb.append(args.code); sb.append(ENV.NL);
+        }
+        sb.append("time="); sb.append(args.time); sb.append(ENV.NL);
+        sb.append("longitude="); sb.append(EZLJava.formatDouble(args.longitude)); sb.append(ENV.NL);
+        sb.append("latitude="); sb.append(EZLJava.formatDouble(args.latitude)); sb.append(ENV.NL);
+        LOG.L(sb.toString());
+    }
 }

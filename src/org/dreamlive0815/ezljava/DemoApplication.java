@@ -16,8 +16,7 @@ public class DemoApplication {
 		try {
 			
 		} catch(Exception e) {
-			System.out.println("ERROR");
-			System.out.println(e.getMessage());
+			
 		}
 		
 		Report();
@@ -31,8 +30,7 @@ public class DemoApplication {
 			ezl.login(userName, passWord);
 			ezl.sleepReport(as);
 		} catch(Exception e) {
-			System.out.println("ERROR");
-			System.out.println(e.getMessage());
+			LOG.L(String.format("!!!Error Occurs!!!%s%s", ENV.NL, e.getMessage()));
 		}
 	}
 	 
