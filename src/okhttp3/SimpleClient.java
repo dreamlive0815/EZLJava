@@ -1,7 +1,5 @@
 package okhttp3;
 
-import java.io.IOException;
-
 import java.net.URLEncoder;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -11,7 +9,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.HashMapCookieJar;
-import okhttp3.Interceptor;
+//import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

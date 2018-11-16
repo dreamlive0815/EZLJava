@@ -15,24 +15,13 @@ public class DemoApplication {
 	{
 		
 		try {
-			sendMail();
+			//sendMail("t", "b");
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		
-		//report(args);
-	}
-
-	static void sendMail() throws Exception
-	{
-		String path = ENV.getWorkingDirectory() + "mail.conf";
-		System.out.println("configPath: " + path);
-		Map<String, String> config = ENV.loadConfigFromFile(path);
-		MailUtil mailUtil = new MailUtil(config.get("host"));
-		mailUtil.setCredentials(config.get("username"), config.get("password"));
-		mailUtil.setFromTo(config.get("from"), config.get("to"));
-		mailUtil.sendText("title", "body");
+		report(args);
 	}
 
 	static void report(String[] args)
@@ -55,5 +44,16 @@ public class DemoApplication {
         passWord = String.valueOf(ENV.G("password"));
         mac = String.valueOf(ENV.G("macaddress"));
         dev = String.valueOf(ENV.G("devname"));
+	}
+
+	static void sendMail(String title, String body) throws Exception
+	{
+		String path = ENV.getWorkingDirectory() + "mail.conf";
+		System.out.println("configPath: " + path);
+		Map<String, String> config = ENV.loadConfigFromFile(path);
+		MailUtil mailUtil = new MailUtil(config.get("host"));
+		mailUtil.setCredentials(config.get("username"), config.get("password"));
+		mailUtil.setFromTo(config.get("from"), config.get("to"));
+		mailUtil.sendText(title, body);
 	}
 }

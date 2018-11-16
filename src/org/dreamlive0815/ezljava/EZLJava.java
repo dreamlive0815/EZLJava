@@ -1,13 +1,7 @@
 package org.dreamlive0815.ezljava;
 
-import java.io.IOException;
-
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -30,7 +24,7 @@ public class EZLJava
     private String sessionId;
     private String macAddr;
     private String devName;
-    private String username;
+    //private String username;
     private boolean loggedIn;
 
     public static String formatDouble(double d)
@@ -59,7 +53,7 @@ public class EZLJava
         c.username = username; c.password = password;
         c.macAddress = macAddr; c.devName = devName;
         if(credentialVerifier != null) credentialVerifier.Verify(c);
-        this.username = username;
+        //this.username = username;
 
         Map<String, Object> params = getBaseParams();
         params.put("cmd", "login");
