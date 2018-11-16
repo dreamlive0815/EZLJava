@@ -1,6 +1,7 @@
 package org.dreamlive0815.ezljava;
 
 import java.util.List;
+import java.util.Map;
 import org.dreamlive0815.util.*;
 
 public class DemoApplication {
@@ -12,18 +13,31 @@ public class DemoApplication {
 
 	public static void main(String[] args)
 	{
-		TI();
+		
 		try {
-			
+			sendMail();
 		} catch(Exception e) {
-			
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
-		MailUtil.sendMail("");
-		//Report(args);
+		
+		//report(args);
 	}
 
-	static void Report(String[] args)
+	static void sendMail() throws Exception
 	{
+		String path = ENV.getWorkingDirectory() + "mail.conf";
+		System.out.println("configPath: " + path);
+		Map<String, String> config = ENV.loadConfigFromFile(path);
+		MailUtil mailUtil = new MailUtil(config.get("host"));
+		mailUtil.setCredentials(config.get("username"), config.get("password"));
+		mailUtil.setFromTo(config.get("from"), config.get("to"));
+		mailUtil.sendText("title", "body");
+	}
+
+	static void report(String[] args)
+	{
+		TI();
 		try {
 			EZLJava ezl = new EZLJava(mac, dev, true);
 			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();

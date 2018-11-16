@@ -24,7 +24,7 @@ public abstract class ENV
         return path;
     }
 
-    public Map<String, String> loadConfigFromFile(String filePath)
+    public static Map<String, String> loadConfigFromFile(String filePath)
     {
         List<String> lines;
         Map<String, String> config = new HashMap<String, String>();

@@ -4,7 +4,6 @@ import java.util.Properties;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -14,50 +13,53 @@ import com.sun.mail.util.MailSSLSocketFactory;
 
 public class MailUtil
 {
-    public static void sendMail(String s)
-    {
-        String to = "995928339@qq.com";
-	      // 发件人电子邮箱
-	      String from = "sunshineminiapp@163.com";
-	      // 邮件服务器
-	      String host = "smtp.163.com";
-	      
-	      Properties properties = System.getProperties();
-	      properties.setProperty("mail.smtp.host", host);
-	      properties.put("mail.smtp.auth", "true");
-	      
-	      // SSL加密
-	      
-	 
-	      try{
+	Properties properties;
+	Session session;
 
-            MailSSLSocketFactory sf = new MailSSLSocketFactory();
-	      sf.setTrustAllHosts(true);
-	      properties.put("mail.smtp.ssl.enable", "true");
-	      properties.put("mail.smtp.ssl.socketFactory", sf);
-	      
-	      // 获取默认session对象 设置auth
-	      Session session = Session.getDefaultInstance(properties, new Authenticator() {
-	    	  public PasswordAuthentication getPasswordAuthentication() {
-	    		  return new PasswordAuthentication("sunshineminiapp@163.com", "kirisame233");
-	          }
-	      });
-	         // 创建默认的 MimeMessage 对象
-	         MimeMessage message = new MimeMessage(session);
-	         // 发件人
-	         message.setFrom(new InternetAddress(from));
-	         // 收件人
-	         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-	         // 标题
-	         message.setSubject("Test Title");
-	         // 正文
-	         message.setText("Test Body");
-	         // 发送消息
-	         Transport.send(message);
-	         
-	         System.out.println("Mail sent successfully");
-	      }catch (Exception mex) {
-	         mex.printStackTrace();
-	      }
+	private String from;
+	private String to;
+
+	public MailUtil(String host)
+	{
+		System.out.print("host: "); System.out.println(host);
+		properties = System.getProperties();
+		properties.put("mail.smtp.host", host);
+	}
+
+	public void setCredentials(String username, String password) throws Exception
+	{
+		System.out.print("username: "); System.out.println(username);
+		System.out.print("password: "); System.out.println(password);
+		properties.put("mail.smtp.auth", "true");
+		MailSSLSocketFactory sf = new MailSSLSocketFactory();
+		//sf.setTrustAllHosts(true);
+		properties.put("mail.smtp.ssl.enable", "true");
+		properties.put("mail.smtp.ssl.socketFactory", sf);
+		
+		session = Session.getDefaultInstance(properties, new Authenticator() {
+			public PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		});
+	}
+
+	public void setFromTo(String from, String to) throws Exception
+	{
+		this.from = from;
+		this.to = to;
+	}
+
+	public void sendText(String title, String body) throws Exception
+    {
+		System.out.print("from: "); System.out.println(from);
+		System.out.print("to: "); System.out.println(to);
+		if(session == null) session = Session.getDefaultInstance(properties);
+		MimeMessage message = new MimeMessage(session);
+		message.setFrom(new InternetAddress(from));
+	    message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+	    message.setSubject(title);
+	    message.setText(body);
+		Transport.send(message);
+		System.out.println("mail sent successfully");
     }
 }
