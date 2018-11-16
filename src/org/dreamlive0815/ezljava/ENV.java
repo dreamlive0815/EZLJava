@@ -31,6 +31,7 @@ public abstract class ENV
         try {
             lines = FileUtil.readAllLines(filePath);
         } catch(Exception e) {
+            System.out.println(String.format("error occurs when reading file : %s", filePath));
             lines = new ArrayList<String>();
         }
         for (String s : lines) {
