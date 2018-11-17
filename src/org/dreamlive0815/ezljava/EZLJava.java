@@ -185,16 +185,21 @@ public class EZLJava
             sessionId = null;
 
             params = getBaseParams();
-            params.put("timetype", "0");
+            params.put("timetype", "1");
             params.put("op", "write");
             params.put("reportlet", String.format("xuefeng/tiaoshi/%scheck_enter.cpt", args.code));
             params.put("time", args.time);
             params.put("jingdu", lon);
             params.put("weidu", la);
             params.put("__replaceview__", "true");
+            params.put("title", "[8003][52e4][7b7e][5230]");
             s = client.getString(URI, params);
             getJson(s);
 
+            params = getBaseParams();
+            params.put("op", "write");
+            params.put("reportlet", "xuefeng/tiaoshi/queren.cpt");
+            s = client.getString(UC(URI, params));
             
 
 
