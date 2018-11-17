@@ -1,11 +1,16 @@
 package org.dreamlive0815.ezljava;
 
+import java.lang.Thread;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.Random;
+
 import org.dreamlive0815.util.*;
 
-public class DemoApplication {
+public class DemoApplication
+{
+	static boolean useProxy = true;
 
 	static String userName;
 	static String passWord;
@@ -15,29 +20,41 @@ public class DemoApplication {
 	public static void main(String[] args)
 	{
 		try {
-			//sendMail("t", "b");
-		} catch(Exception e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-		
-		report(args);
-	}
+			args = new String[] {"Course"};
+			report(args);
 
-	static void report(String[] args)
-	{
-		TI();
-		try {
-			EZLJava ezl = new EZLJava(mac, dev, false);
-			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();
-			ezl.login(userName, passWord);
-			ezl.sleepReport(as);
-			LOG.L("归寝签到成功");
-			String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
-			sendMail(String.format("%s归寝签到成功", date), "归寝签到成功");
 		} catch(Exception e) {
 			LOG.L(String.format("!!!Error Occurs!!!%s%s", ENV.NL, e.getMessage()));
 			e.printStackTrace();
+		}	
+	}
+
+	static void delay(int maxMilliSeconds) throws Exception
+	{
+		Random rand = new Random();
+		int sec = rand.nextInt(maxMilliSeconds);
+		LOG.L(String.format("gonna sleep %s milliseconds", sec));
+		Thread.sleep(sec);
+	}
+
+	static void report(String[] args) throws Exception
+	{
+		TI();
+		LOG.L("ezl is starting...");
+		//delay(180 * 1000);
+		System.out.println(String.format("UseProxy:%s", useProxy));
+		EZLJava ezl = new EZLJava(mac, dev, useProxy);
+		ezl.login(userName, passWord);
+		String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+		String type = args.length > 0 ? args[0] : "";
+		if("Course".equals(type)) {
+			ezl.getCoursePage("A1");
+		} else if("Sleep".equals(type)) {
+			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();ezl.sleepReport(as);
+			LOG.L("sleep report done");
+			sendMail(String.format("[%s]Sleep Report", date), "Sleep Report Done");
+		} else {
+			throw new Exception("unknown report type");
 		}
 	}
 	 

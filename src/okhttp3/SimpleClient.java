@@ -41,6 +41,11 @@ public class SimpleClient
     	return sb.toString();
     }
 
+    public static String urlEncode(String s) throws Exception
+    {
+        return URLEncoder.encode(s, WriteCharset);
+    }
+
     public SimpleClient()
     {
         this(false);

@@ -40,6 +40,14 @@ public class ReportArgsGenerator
         return getRandomDouble(base - o, base + o);
     }
 
+    public static CourseArgs getCourseReportArgs(String timeType) throws Exception
+    {
+        String time = getNowTime();
+        double lon = getRandomDouble(COURSE_LONGITUDE, OFFSET, DefaultReportArgsVerifier.COURSE_MIN_LONGITUDE, DefaultReportArgsVerifier.COURSE_MAX_LONGITUDE);
+        double la = getRandomDouble(COURSE_LATITUDE, OFFSET, DefaultReportArgsVerifier.COURSE_MIN_LATITUDE, DefaultReportArgsVerifier.COURSE_MAX_LATITUDE);
+        return new CourseArgs(timeType, time, lon, la);
+    }
+
     public static SleepArgs getSleepReportArgs() throws Exception
     {
         String time = getNowTime();

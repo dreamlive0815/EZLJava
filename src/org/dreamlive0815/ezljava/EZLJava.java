@@ -1,5 +1,7 @@
 package org.dreamlive0815.ezljava;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,10 +13,14 @@ import okhttp3.SimpleClient;
 
 public class EZLJava
 {
+    //对可能出现汉字的信息进行url编码
+    private final static boolean urlEncode = true;
+
     private final static String BA = "http://stu.zstu.edu.cn";
     private final static String URI = "/WebReport/ReportServer";
     private static final String emptyXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><WorkBook><Version>6.5</Version><Report class=\"com.fr.report.WorkSheet\" name=\"0\"><CellElementList></CellElementList></Report></WorkBook>";
     private static final String xmlFormat = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><WorkBook><Version>6.5</Version><Report class=\"com.fr.report.WorkSheet\" name=\"0\"><CellElementList><C c=\"%s\" r=\"%s\"><O t=\"%s\"><![5b]CDATA[5b]%s[5d][5d]></O></C></CellElementList></Report></WorkBook>";
+    private static List<String> timeTypes = Arrays.asList("A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8");
 
     public CredentialsVerifier credentialVerifier = new DefaultCredentialsVerifier();
     public ReportArgsVerifier reportArgsVerifier = new DefaultReportArgsVerifier();
@@ -85,6 +91,55 @@ public class EZLJava
         return jsonA;
     }
 
+    public JSONObject getCoursePage(String timeType) throws Exception
+    {
+        assertLoggedIn();
+
+        if(!timeTypes.contains(timeType))
+            throw new Exception(String.format(T.G("EJ.CR.UKTT"), timeType));
+
+        //2123
+        String moduleId = getModuleId(".学风建设.课堂签到");
+        Map<String, Object> params = getBaseParams();
+        params.put("cmd", "entry_report");
+        params.put("op", "fs_main");
+        params.put("id", moduleId);
+        String s = client.getString(URI, params);
+        getJson(s);
+
+        params = getBaseParams();
+        params.put("cmd", "json");
+        params.put("op", "page_content");
+        params.put("toVanCharts", "true");
+        params.put("path", "");
+        params.put("pn", "1");
+        s = client.getString(UC(URI, params));
+
+        sessionId = null;
+
+        params = getBaseParams();
+        params.put("op", "fs_load");
+        s = client.getString(URI, params);
+
+        params = getBaseParams();
+        params.put("op", "write");
+        params.put("__pi__", "true");
+        params.put("reportlet", String.format("/xuefeng/tiaoshi/%s.cpt", timeType));
+        s = client.getString(URI, params);
+        getJson(s);//规定经纬度的js
+
+        params = getBaseParams();
+        params.put("cmd", "read_by_json");
+        params.put("op", "fr_write");
+        params.put("toVanCharts", "true");
+        params.put("path", "/view/report");
+        params.put("reportIndex", "0");
+        params.put("pn", "1");
+        s = client.getString(UC(URI, params));
+
+        return (JSONObject)getJson(s);
+    }
+
     public JSONObject getSleepPage() throws Exception
     {
         assertLoggedIn();
@@ -96,7 +151,7 @@ public class EZLJava
         params.put("op", "fs_main");
         params.put("id", moduleId);
         String s = client.getString(URI, params);
-        getJson(s);
+        getJson(s);//规定经纬度的js
 
         params = getBaseParams();
         params.put("cmd", "read_by_json");
@@ -105,7 +160,6 @@ public class EZLJava
         params.put("path", "/view/report");
         params.put("reportIndex", "0");
         params.put("pn", "1");
-
         s = client.getString(UC(URI, params));
 
         return (JSONObject)getJson(s);
@@ -154,6 +208,7 @@ public class EZLJava
 
 
             sessionId = null;
+
             params = getBaseParams();
             params.put("op", "write");
             params.put("reportlet", "2017/baodaocheck_enter.cpt");
@@ -191,7 +246,9 @@ public class EZLJava
             JSONArray jsonA = (JSONArray)getJson(s);
             JSONObject jsonO = jsonA.getJSONObject(0);
             if(jsonO.containsKey("message")) {
-                throw new Exception(String.format(T.G("EJ.SR.WVF"), jsonO.getString("message")));
+                String message = jsonO.getString("message");
+                if(urlEncode) message = SimpleClient.urlEncode(message);
+                throw new Exception(String.format(T.G("EJ.SR.WVF"), message));
             }
 
             params = getBaseParams();
@@ -239,12 +296,14 @@ public class EZLJava
     		JSONObject jsonO = (JSONObject)jsonObj;
     		if(jsonO.containsKey("errorCode")) {
     			int code = jsonO.getIntValue("errorCode");
-    			String message = jsonO.getString("errorMsg");
+                String message = jsonO.getString("errorMsg");
+                if(urlEncode) message = SimpleClient.urlEncode(message);
     			throw new ReportException(code, message);
     		}
     		if(jsonO.containsKey("exception")) {
     			String exception = jsonO.getString("exception");
-    			String message = jsonO.getString("message");
+                String message = jsonO.getString("message");
+                if(urlEncode) message = SimpleClient.urlEncode(message);
     			throw new ReportException(exception, message);
     		}
 
