@@ -20,11 +20,11 @@ public class DemoApplication
 	public static void main(String[] args)
 	{
 		try {
-			args = new String[] {"Course"};
+			args = new String[] {"Course", "A1"};
 			report(args);
 
 		} catch(Exception e) {
-			LOG.L(String.format("!!!Error Occurs!!!%s%s", ENV.NL, e.getMessage()));
+			LOG.L(String.format("!!!Error Occurs!!!%s%s%s", ENV.NL, e.getMessage(), ENV.NL));
 			e.printStackTrace();
 		}	
 	}
@@ -48,9 +48,12 @@ public class DemoApplication
 		String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
 		String type = args.length > 0 ? args[0] : "";
 		if("Course".equals(type)) {
-			ezl.getCoursePage("A1");
+			String timeType = args.length > 1 ? args[1] : "";
+			CourseArgs cs = ReportArgsGenerator.getCourseReportArgs(timeType);
+			ezl.courseReport(cs);
 		} else if("Sleep".equals(type)) {
-			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();ezl.sleepReport(as);
+			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();
+			ezl.sleepReport(as);
 			LOG.L("sleep report done");
 			sendMail(String.format("[%s]Sleep Report", date), "Sleep Report Done");
 		} else {

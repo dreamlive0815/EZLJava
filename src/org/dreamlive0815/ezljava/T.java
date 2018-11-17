@@ -58,7 +58,7 @@ class T_EN extends T
         M.put("DRAV.CCL.LON", "the longitude of course location must be bewteen %s-%s");
         M.put("DRAV.CCL.LA", "the latitude of course location must be bewteen %s-%s");
         M.put("DRAV.CCT.IL", "illegal time : %s for course period : %s");
-        M.put("DRAV.CCT.UKP", "illegal course period : %s");
+        M.put("DRAV.CCT.UKP", "illegal course timetype : %s");
         M.put("DRAV.CSL.LON", "the longitude of sleep location must be bewteen %s-%s");
         M.put("DRAV.CSL.LA", "the latitude of sleep location must be bewteen %s-%s");
         M.put("DRAV.CST.IL", "illegal sleep time : %s");

@@ -140,6 +140,71 @@ public class EZLJava
         return (JSONObject)getJson(s);
     }
 
+    public void courseReport(CourseArgs args) throws Exception
+    {
+        //if(reportArgsVerifier != null) reportArgsVerifier.Verify(args);
+
+        try {
+            getCoursePage(args.code);
+
+            String lon = formatDouble(args.longitude);
+            String la = formatDouble(args.latitude);
+            String xml; String s;
+            Map<String, Object> params = getBaseParams();
+            
+            params.put("cmd", "cal_write_cell");
+            params.put("op", "fr_write");
+            params.put("path", "/view/report");
+            params.put("editcol", 2);
+            params.put("editrow", 1);
+            params.put("editReportIndex", "0");
+            params.put("loadidxs", "[5b]0[5d]");
+            xml = String.format(xmlFormat, 2, 1, 'S', lon);
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
+
+            params.put("editcol", 2);
+            params.put("editrow", 2);
+            xml = String.format(xmlFormat, 2, 2, 'S', la);
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
+
+            params.put("editcol", 5);
+            params.put("editrow", 2);
+            xml = String.format(xmlFormat, 5, 2, 'S', "[6709][6548]");
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
+
+            params.put("editcol", 5);
+            params.put("editrow", 1);
+            xml = String.format(xmlFormat, 5, 1, 'S', "[65e0][6548]");
+            params.put("reportXML", xml);
+            s = client.getString(UC(URI, params));
+
+
+            sessionId = null;
+
+            params = getBaseParams();
+            params.put("timetype", "0");
+            params.put("op", "write");
+            params.put("reportlet", String.format("xuefeng/tiaoshi/%scheck_enter.cpt", args.code));
+            params.put("time", args.time);
+            params.put("jingdu", lon);
+            params.put("weidu", la);
+            params.put("__replaceview__", "true");
+            s = client.getString(URI, params);
+            getJson(s);
+
+            
+
+
+        } catch(Exception e) {
+            throw e;
+        } finally {
+            closeSession();
+        }
+    }
+
     public JSONObject getSleepPage() throws Exception
     {
         assertLoggedIn();
@@ -213,8 +278,8 @@ public class EZLJava
             params.put("op", "write");
             params.put("reportlet", "2017/baodaocheck_enter.cpt");
             params.put("time", args.time);
-            params.put("jingdu", args.longitude);
-            params.put("weidu", args.latitude);
+            params.put("jingdu", lon);
+            params.put("weidu", la);
             s = client.getString(URI, params);
             getJson(s);
 
@@ -259,10 +324,10 @@ public class EZLJava
             s = client.getString(UC(URI, params));
 
         } catch(Exception e) {
-            closeSession();
             throw e;
+        } finally {
+            closeSession();
         }
-        closeSession();
     }
 
     private void assertLoggedIn() throws Exception
