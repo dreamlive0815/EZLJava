@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.dreamlive0815.util.*;
 
@@ -62,7 +64,13 @@ public class DemoApplication
 		TI();
 		LOG.L("ezl is starting..." + ENV.NL);
 		String shutdelay = getRunArg("shutdelay");
-		if(!"1".equals(shutdelay)) delay(180 * 1000);
+		int delaySeconds = 5;
+		String ds = getRunArg("delayseconds");
+		Pattern p = Pattern.compile("^\\d+$");
+		Matcher m = p.matcher(ds);
+		if(m.find()) delaySeconds = Integer.parseInt(ds);
+		System.out.println(String.format("DelaySeconds : %ss", delaySeconds));
+		if(!"1".equals(shutdelay)) delay(delaySeconds * 1000);
 		System.out.println(String.format("UseProxy:%s", useProxy));
 		EZLJava ezl = new EZLJava(mac, dev, useProxy);
 		ezl.login(userName, passWord);
