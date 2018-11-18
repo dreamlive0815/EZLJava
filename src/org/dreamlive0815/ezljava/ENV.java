@@ -8,8 +8,8 @@ import org.dreamlive0815.util.FileUtil;
 
 public abstract class ENV
 {
-    public static ENV instance = new DefaultENV();
     public static String NL = System.getProperty("line.separator");
+    public static ENV instance = new DefaultENV();
 
     public static Object G(String key)
     {
@@ -31,7 +31,7 @@ public abstract class ENV
         try {
             lines = FileUtil.readAllLines(filePath);
         } catch(Exception e) {
-            LOG.L(String.format("error occurs when reading file : %s%s", filePath, ENV.NL));
+            LOG.L(String.format("error occurs when reading file : %s%s", filePath, NL));
             lines = new ArrayList<String>();
         }
         for (String s : lines) {
