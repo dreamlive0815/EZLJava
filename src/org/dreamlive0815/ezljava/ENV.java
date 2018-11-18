@@ -31,7 +31,7 @@ public abstract class ENV
         try {
             lines = FileUtil.readAllLines(filePath);
         } catch(Exception e) {
-            LOG.L(String.format("error occurs when reading file : %s", filePath));
+            LOG.L(String.format("error occurs when reading file : %s%s", filePath, ENV.NL));
             lines = new ArrayList<String>();
         }
         for (String s : lines) {
