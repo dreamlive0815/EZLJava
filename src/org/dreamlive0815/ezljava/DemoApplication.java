@@ -10,7 +10,7 @@ import org.dreamlive0815.util.*;
 
 public class DemoApplication
 {
-	static boolean useProxy = true;
+	static boolean useProxy = false;
 
 	static String userName;
 	static String passWord;
@@ -20,7 +20,7 @@ public class DemoApplication
 	public static void main(String[] args)
 	{
 		try {
-			args = new String[] {"Course", "A1"};
+			
 			report(args);
 
 		} catch(Exception e) {
@@ -41,7 +41,7 @@ public class DemoApplication
 	{
 		TI();
 		LOG.L("ezl is starting...");
-		//delay(180 * 1000);
+		delay(180 * 1000);
 		System.out.println(String.format("UseProxy:%s", useProxy));
 		EZLJava ezl = new EZLJava(mac, dev, useProxy);
 		ezl.login(userName, passWord);
@@ -51,6 +51,8 @@ public class DemoApplication
 			String timeType = args.length > 1 ? args[1] : "";
 			CourseArgs cs = ReportArgsGenerator.getCourseReportArgs(timeType);
 			ezl.courseReport(cs);
+			LOG.L("course report done");
+			sendMail(String.format("[%s]Course Report[%s]", date, timeType), "Course Report Done For Timetype : " + timeType);
 		} else if("Sleep".equals(type)) {
 			SleepArgs as = ReportArgsGenerator.getSleepReportArgs();
 			ezl.sleepReport(as);

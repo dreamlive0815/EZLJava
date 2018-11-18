@@ -185,8 +185,8 @@ public class EZLJava
             sessionId = null;
 
             params = getBaseParams();
-            params.put("timetype", "1");
             params.put("op", "write");
+            params.put("timetype", "1");
             params.put("reportlet", String.format("xuefeng/tiaoshi/%scheck_enter.cpt", args.code));
             params.put("time", args.time);
             params.put("jingdu", lon);
@@ -196,12 +196,35 @@ public class EZLJava
             s = client.getString(URI, params);
             getJson(s);
 
-            params = getBaseParams();
-            params.put("op", "write");
-            params.put("reportlet", "xuefeng/tiaoshi/queren.cpt");
+            params.put("cmd", "read_by_json");
+            params.put("op", "fr_write");
+            params.put("toVanCharts", "true");
+            params.put("path", "/view/report");
+            params.put("reportIndex", "0");
+            params.put("pn", "1");
             s = client.getString(UC(URI, params));
-            
 
+            params = getBaseParams();
+            params.put("cmd", "write_verify");
+            params.put("op", "fr_write");
+            params.put("path", "/view/report");
+            params.put("cutPage", "");
+            params.put("reportXML", emptyXml);
+            s = client.getString(UC(URI, params));
+            JSONArray jsonA = (JSONArray)getJson(s);
+            JSONObject jsonO = jsonA.getJSONObject(0);
+            if(jsonO.containsKey("message")) {
+                String message = jsonO.getString("message");
+                if(urlEncode) message = SimpleClient.urlEncode(message);
+                throw new Exception(String.format(T.G("EJ.CR.WVF"), args.code, message));
+            }
+            
+            params = getBaseParams();
+            params.put("cmd", "submit_w_report");
+            params.put("op", "fr_write");
+            params.put("path", "/view/report");
+            params.put("reportXML", emptyXml);
+            s = client.getString(UC(URI, params));
 
         } catch(Exception e) {
             throw e;
